@@ -1,0 +1,22 @@
+apiVersion: v2
+name: amdgpu-metrics-exporter-charts
+description: A Helm chart for AMD GPU Metric Exporter
+keywords:
+  - kubernetes
+  - cluster
+  - hardware
+  - amd
+  - gpu
+  - monitoring
+  - prometheus
+
+type: application
+version: v1.0.0
+appVersion: "v1.0.0"
+kubeVersion: ">= 1.29.0-0"
+
+maintainers:
+- email: prshanmug@amd.com
+  name: Praveen Kumar Shanmugam
+- email: yan.sun3@amd.com
+  name: Yan Sun
