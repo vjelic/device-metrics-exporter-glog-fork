@@ -22,7 +22,7 @@ Device Metrics Exporter exports metrics from AMD GPUs to collectors like Prometh
     nodeSelector: {} # add customized nodeSelector for metrics exporter daemonset
     image:
       repository: docker.io/rocm/device-metrics-exporter
-      tag: latest
+      tag: v1.0.0
       pullPolicy: Always
       pullSecrets: "" # put name of docker-registry secret here if needed for exporter image
     service:
