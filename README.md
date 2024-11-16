@@ -15,7 +15,6 @@ Device Metrics Exporter exports metrics from AMD GPUs to collectors like Prometh
   - Kubernetes cluster is up and running
   - Helm tool is installed on the node with kubectl + kube config file to get access to the cluster
 - Installation
-  - Download the device metrics exporter helm charts .tgz file
   - Prepare ```values.yaml``` to setup the deployment parameters, for example:
     ```yaml
     platform: k8s
@@ -36,7 +35,7 @@ Device Metrics Exporter exports metrics from AMD GPUs to collectors like Prometh
     ```
   - (Optional) if you want to customize the exported stats, please create a configmap by using ```example/configmap.yaml``` (please modify the namespace to align with helm install command), and put the configmap name into ```values.yaml```.
   - Run ```helm install``` command to deploy exporter in your Kubernetes cluster:
-    ```helm install exporter ./amdgpu-metrics-exporter-charts-v1.0.0.tgz -n mynamespace -f values.yaml```
+    ```helm install exporter https://github.com/ROCm/device-metrics-exporter/releases/download/v1.0.0/device-metrics-exporter-charts-v1.0.0.tgz -n mynamespace -f values.yaml```
 - Update config:
   - Option 1: you can directly modify the Kubernetes resource to modify the config, including modifying configmap, service, rbac or daemonset resources.
   - Option 2: you can prepare the updated ```values.yaml``` and do a helm chart upgrade: ```helm upgrade exporter -n mynamespace -f updated_values.yaml```
