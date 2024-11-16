@@ -5,8 +5,8 @@ Device Metrics Exporter exports metrics from AMD GPUs to collectors like Prometh
 ## Supported Platforms
   - Ubuntu 22.04
 
-## RDC version
-  - ROCM 6.2
+## ROCm version
+  - ROCm 6.2
 
 ## Build and Run Instructions
 
