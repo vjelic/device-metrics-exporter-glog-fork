@@ -1,6 +1,6 @@
-# AMD GPU Metrics Exporter
+# AMD Device Metrics Exporter
 
-AMD GPU Metrics Exporter enables real-time collection of GPU telemetry data in Prometheus format from AMD GPUs in HPC and AI environments. It provides comprehensive metrics including temperature, utilization, memory usage, power consumption, and more.
+AMD Device Metrics Exporter enables real-time collection of telemetry data in Prometheus format from AMD GPUs in HPC and AI environments. It provides comprehensive metrics including temperature, utilization, memory usage, power consumption, and more.
 
 ## Quick Start
 

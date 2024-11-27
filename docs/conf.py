@@ -16,7 +16,7 @@ html_theme_options = {
     "flavor": "generic",
     "header_title": "AMD Instinct Documentation",
     "nav_secondary_items": {
-        "GitHub": "https://github.com/rocm/dcgpu-docs",
+        "GitHub": "https://github.com/rocm/device-metrics-exporter",
         "Documentation": "https://dcgpu.docs.amd.com"
     },
     # Add any additional theme options here
