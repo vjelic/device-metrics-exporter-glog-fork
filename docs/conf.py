@@ -3,10 +3,10 @@
 external_projects_remote_repository = "https://raw.githubusercontent.com/ROCm/dcgpu-docs/refs/heads/develop/docs/projects.yaml"
 external_projects_current_project = "device-metrics-exporter"
 
-project = "AMD Device Metrics Exporter"
+project = "AMD Instinct Documentation"
 version = "1.0.0"
 release = version
-html_title = f"{project} {version}"
+html_title = f"Device Metrics Exporter {version}"
 author = "Advanced Micro Devices, Inc."
 copyright = "Copyright (c) 2024 Advanced Micro Devices, Inc. All rights reserved."
 
