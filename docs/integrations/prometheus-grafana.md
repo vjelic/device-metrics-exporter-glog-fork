@@ -6,7 +6,7 @@
 scrape_configs:
   - job_name: 'gpu_metrics'
     static_configs:
-      - targets: ['localhost:5000']
+      - targets: ['exporter_external_ip:5000']
 ```
 
 Pre-built Grafana dashboards are available in the `grafana/` directory of the repository:
