@@ -1,6 +1,6 @@
 # Prometheus and Grafana
 
-- Add the metrics endpoint to your Prometheus configuration:
+To ingest metrics into Prometheus, add the metrics exporter endpoint to your Prometheus configuration:
 
 ```yaml
 scrape_configs:
