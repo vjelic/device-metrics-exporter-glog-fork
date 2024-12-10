@@ -2,8 +2,8 @@
 
 external_projects_local_file = "projects.yaml"
 external_projects_remote_repository = ""
-external_projects = ["metrics-exporter"]
-external_projects_current_project = "metrics-exporter"
+external_projects = ["device-metrics-exporter"]
+external_projects_current_project = "device-metrics-exporter"
 
 project = "AMD Instinct Hub"
 version = "1.0.0"
