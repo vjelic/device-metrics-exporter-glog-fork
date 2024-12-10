@@ -2,7 +2,6 @@
 
 ## Prerequisites
 
-- Ubuntu 22.04 or later
 - ROCm 6.2.0
 - Docker (or a Docker-compatible container runtime)
 
