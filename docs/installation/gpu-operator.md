@@ -1,6 +1,6 @@
 # Kubernetes (GPU Operator)
 
-## System Requirements
+## Prerequisites
 
 - Kubernetes cluster v1.29.0 or later
 - Helm v3.2.0 or later

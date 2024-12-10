@@ -1,13 +1,13 @@
 # Kubernetes
 
-When deploying the Metrics Exporter on Kubernetes, there will be a `ConfigMap` deployed in the exporter namespace. 
+When deploying the Metrics Exporter on Kubernetes, there will be a `ConfigMap` deployed in the exporter namespace.
 
 ## Configuration parameters
 
-- `ServerPort`: this field is ignored when metrics exporter is deployed through gpu-operator as to avoid the service node port config causing issues
+- `ServerPort`: this field is ignored when metrics exporter is deployed by the [GPU Operator](https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/) to avoid conflicts with the service node port config
 - `GPUConfig`:
-    - Fields: An array of strings specifying what metrics field to be exported
-    - Labels: `CARD_MODEL`, `GPU_UUID` and `SERIAL_NUMBER` are always set and cannot be removed. Labels supported are available the provided example `configmap.yml`.
+  - Fields: An array of strings specifying what metrics field to be exported
+  - Labels: `CARD_MODEL`, `GPU_UUID` and `SERIAL_NUMBER` are always set and cannot be removed. Labels supported are available the provided example `configmap.yml`.
 
 ## Setting custom values
 

@@ -1,5 +1,13 @@
 # Kubernetes (Helm)
 
+## Prerequisites
+
+- Kubernetes cluster v1.29.0 or later
+- Helm v3.2.0 or later
+- `kubectl` command-line tool configured with access to the cluster
+
+## Installation
+
 For Kubernetes environments, we provide a Helm chart for easy deployment.
 
 - Prepare a `values.yaml` file:
@@ -25,9 +33,7 @@ helm install exporter \
   -n mynamespace -f values.yaml --create-namespace
 ```
 
-## Configuration
-
-### Default Settings
+## Default Settings
 
 - Metrics endpoint: `http://localhost:5000/metrics`
-- Default configuration file: `/etc/metrics/config.json`
+- Configuration file: `/etc/metrics/config.json`
