@@ -1,4 +1,4 @@
-# Prometheus and Grafana Integration Guide
+# Prometheus and Grafana
 
 - Add the metrics endpoint to your Prometheus configuration:
 

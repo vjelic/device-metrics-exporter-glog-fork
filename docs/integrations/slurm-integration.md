@@ -1,4 +1,4 @@
-# Slurm Integration Guide
+# Slurm
 
 The AMD GPU Metrics Exporter provides integration with Slurm workload manager to track GPU metrics for Slurm jobs. This guide explains how to set up and configure this integration.
 
@@ -13,8 +13,9 @@ The AMD GPU Metrics Exporter provides integration with Slurm workload manager to
 - Copy the integration script:
 
 ```bash
-sudo cp /usr/local/etc/metrics/slurm/slurm-exporter.sh /etc/slurm/
-sudo chmod +x /etc/slurm/slurm-exporter.sh
+sudo cp /usr/local/etc/metrics/slurm/slurm-prolog.sh /etc/slurm/
+sudo cp /usr/local/etc/metrics/slurm/slurm-epilog.sh /etc/slurm/
+sudo chmod +x /etc/slurm/slurm-*.sh
 ```
 
 - Configure Slurm:
@@ -24,15 +25,15 @@ sudo vi /etc/slurm/slurm.conf
 
 # Add these lines:
 prologFlags=Alloc
-Prolog=/etc/slurm/slurm-exporter.sh
-Epilog=/etc/slurm/slurm-exporter.sh
+Prolog=/etc/slurm/slurm-prolog.sh
+Epilog=/etc/slurm/slurm-epilog.sh
 ```
 
 - Restart Slurm services to apply changes:
 
 ```bash
 sudo systemctl restart slurmctld  # On controller node
-sudo systemctl restart slurmd    # On compute nodes
+sudo systemctl restart slurmd     # On compute nodes
 ```
 
 ## Verification
@@ -58,6 +59,7 @@ When Slurm integration is enabled, the following job-specific labels are added t
 - `job_id`: Slurm job ID
 - `job_user`: Username of job owner
 - `job_partition`: Slurm partition name
+- `cluster_name`: Slurm cluster name
 
 ## Troubleshooting
 
@@ -65,7 +67,7 @@ When Slurm integration is enabled, the following job-specific labels are added t
 
 1. Script permissions:
    - Ensure the exporter script is executable
-   - Verify proper ownership (should be owned by root or slurm user)
+   - Verify proper ownership (should be owned by `root` or `slurm` user)
 
 2. Configuration issues:
    - Check Slurm logs for prolog/epilog execution errors
@@ -75,12 +77,24 @@ When Slurm integration is enabled, the following job-specific labels are added t
    - Ensure metrics exporter is running
    - Check if job ID labels are being properly set
 
+4. Check service status:
+
+```bash
+systemctl status rdc.service gpuagent.service amd-metrics-exporter.service
+```
+
 ### Logs
 
-Check Slurm logs for integration issues:
+View Slurm logs for integration issues:
 
 ```bash
 sudo tail -f /var/log/slurm/slurmd.log
+```
+
+View service logs:
+
+```bash
+journalctl -u rdc.service -u gpuagent.service -u amd-metrics-exporter.service
 ```
 
 ## Advanced Configuration
@@ -90,8 +104,8 @@ sudo tail -f /var/log/slurm/slurmd.log
 You can place the script in a different location by updating the paths in `slurm.conf`:
 
 ```bash
-Prolog=/path/to/custom/slurm-exporter.sh
-Epilog=/path/to/custom/slurm-exporter.sh
+Prolog=/path/to/custom/slurm-prolog.sh
+Epilog=/path/to/custom/slurm-epilog.sh
 ```
 
 ### Additional Job Information

@@ -1,6 +1,6 @@
-# AMD GPU Metrics Exporter
+# AMD Device Metrics Exporter
 
-AMD GPU Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. It provides detailed GPU telemetry including temperature, utilization, memory usage, and power consumption.
+AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. It provides detailed telemetry including temperature, utilization, memory usage, and power consumption.
 
 ## Features
 
@@ -60,7 +60,7 @@ service:
 ```bash
 helm install exporter \
   https://github.com/ROCm/device-metrics-exporter/releases/download/v1.0.0/device-metrics-exporter-charts-v1.0.0.tgz \
-  -n mynamespace -f values.yaml
+  -n mynamespace -f values.yaml --create-namespace
 ```
 
 ## Configuration
@@ -132,7 +132,7 @@ docker logs device-metrics-exporter
    - Configure an alternate port through the configuration file
 
 2. Device access:
-   - Ensure proper permissions on /dev/dri and /dev/kfd
+   - Ensure proper permissions on `/dev/dri` and `/dev/kfd`
    - Verify ROCm is properly installed
 
 3. Metric collection issues:
