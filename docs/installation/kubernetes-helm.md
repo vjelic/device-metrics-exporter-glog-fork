@@ -1,14 +1,18 @@
-# Kubernetes (Helm)
+# Kubernetes (Helm) installation
 
-## Prerequisites
+This page explains how to install AMD Device Metrics Exporter using Kubernetes.
 
+## System requirements
+
+- ROCm 6.2.0
+- Ubuntu 22.04 or later
 - Kubernetes cluster v1.29.0 or later
 - Helm v3.2.0 or later
 - `kubectl` command-line tool configured with access to the cluster
 
 ## Installation
 
-For Kubernetes environments, we provide a Helm chart for easy deployment.
+For Kubernetes environments, a Helm chart is provided for easy deployment.
 
 - Prepare a `values.yaml` file:
 
@@ -33,7 +37,3 @@ helm install exporter \
   -n mynamespace -f values.yaml --create-namespace
 ```
 
-## Default Settings
-
-- Metrics endpoint: `http://localhost:5000/metrics`
-- Configuration file: `/etc/metrics/config.json`
