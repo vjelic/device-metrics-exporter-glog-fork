@@ -4,7 +4,7 @@ This page explains how to install AMD Device Metrics Exporter using Docker.
 
 ## System requirements
 
-- ROCm 6.2.0
+- ROCm 6.2.0 or later
 - Ubuntu 22.04 or later
 - Docker (or a Docker-compatible container runtime)
 
