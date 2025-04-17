@@ -46,7 +46,7 @@ var (
 		exportermetrics.GPUMetricLabel_GPU_COMPUTE_PARTITION_TYPE.String(),
 		exportermetrics.GPUMetricLabel_GPU_MEMORY_PARTITION_TYPE.String(),
 	}
-	// List of suppported labels that can be customized
+	// List of supported labels that can be customized
 	allowedCustomLabels = []string{
 		exportermetrics.GPUMetricLabel_CLUSTER_NAME.String(),
 	}
@@ -511,7 +511,7 @@ func (ga *GPUAgentClient) initPrometheusMetrics() {
 		),
 		gpuPackagePower: *prometheus.NewGaugeVec(prometheus.GaugeOpts{
 			Name: "gpu_package_power",
-			Help: "Current socker power in Watts",
+			Help: "Current socket power in Watts",
 		},
 			labels),
 		gpuAvgPkgPower: *prometheus.NewGaugeVec(prometheus.GaugeOpts{
